@@ -40,7 +40,7 @@ This data allows you to analyze user performance in terms of correct and incorre
 
 Here are the SQL problems that you will solve as part of this project:
 
-##  Q1:  Q.1 List all distinct users and their stats (return user_name, total_submissions, points earned)
+##  Q1:   List all distinct users and their stats (return user_name, total_submissions, points earned)
 ```sql
 SELECT 
 	username,
@@ -106,7 +106,7 @@ WHERE rank <= 3;
 **Description:**
 This query identifies the top 3 users with the highest number of correct submissions (points > 0) for each day.It uses window functions to rank users by daily performance and highlights the most accurate contributors per day.
 
-## Q4. Find the top 2 users with the highest number of submissions on each day
+## Q4: Find the top 2 users with the highest number of submissions on each day
 ```sql
 WITH daily_submissions	
 AS
@@ -139,7 +139,7 @@ WHERE rank <=2
 **Description:**
 This query finds the top 2 users with the highest number of submissions on each day.It uses a window function to rank users by daily submission count and filters the top performers.
 
-## Q5 Find the user with the lowest total points earned on each day
+## Q5: Find the user with the lowest total points earned on each day
 ```sql
 WITH daily_submittions
 	AS
@@ -170,7 +170,7 @@ WHERE rank = 1
 ## Description:
 This query identifies the user with the lowest total points earned on each day.It ranks users daily by points in ascending order to highlight underperformers per day.
 
-## Q6.Show each user’s best day — the day they earned the most points
+## Q6:  Show each user’s best day — the day they earned the most points
 ```sql
 WITH daily_submittions
 	AS
@@ -202,7 +202,7 @@ WHERE rank = 1
 **Description:**
 This query finds each user's best day based on the highest total points earned. It uses window functions to rank daily performance per user and selects the top-ranked day.
 
-## Q7. Which 3 days had the most total submissions overall?
+## Q7: Which 3 days had the most total submissions overall?
 ```sql
 SELECT 
       DATE(submitted_at) AS date,
@@ -216,7 +216,7 @@ LIMIT 3
 **Description:**
 This query identifies the top 3 days with the highest total number of submissions across all users.It groups submissions by date, counts them, and orders the results to highlight peak activity days.
 
-## Q8 Find the top 5 users with the highest number of incorrect submissions.
+## Q8: Find the top 5 users with the highest number of incorrect submissions.
 ```sql
 SELECT 
       username,
@@ -241,7 +241,7 @@ ORDER BY incorrect_submissions DESC
 **Description:**
 This query identifies the top 5 users with the most incorrect submissions (where points < 0).It also compares their correct vs. incorrect submission counts and the total points earned from each.
 
-## Q.9 Find the top 10 performers for each week.
+## Q9: Find the top 10 performers for each week.
 ```sql
 SELECT *
 	FROM 
@@ -259,7 +259,7 @@ WHERE rank <=10;
 **Description:**
 This query finds the top 10 performers for each week based on total points earned. It uses DENSE_RANK() to rank users within each week and filters out only the highest scorers.
 
-## 10.Find the top 10 performers for each week.
+## 10:  Find the top 10 performers for each week.
 
 ```sql
 SELECT *
